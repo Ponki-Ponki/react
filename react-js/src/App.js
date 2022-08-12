@@ -1,5 +1,4 @@
 import './App.css';
-import Message from './Message';
 import {useEffect, useRef, useState} from 'react';
 
 function App() {
@@ -14,36 +13,35 @@ function App() {
         author: 'a2',
       }]);
   
-  useEffect((item)=>{
-      const Update = ({text,author}) => {
+    const Update = ({text,author}) => {
+      setMessageList(  
         messageList.push({
           key: messageList[messageList.length -1].key +1,
           text: {text},
           author: {author},
-      });
+        })
+      )
     }
-  },[messageList])
-
   const text = useRef();
   const author = useRef();
 
   return (
-    <div class='root'>
+    <div className='root'>
       
     
-    <div class='listMessage'>
+    <div className='listMessage'>
       <div>
-        <input ref='text' type="text" class='text' />
-        <div class='authorSend'>
-          <input ref='author' type="text" class='author'/>
-          <button onClick={Update({text: text.current.text, author: author.current.text})}>Send</button>
+        <input ref={text} type="text" className='text' />
+        <div className='authorSend'>
+          <input ref={author} type="text" className='author'/>
+          <button onClick={Update({text: text.current, author: author.current})}>Send</button>
         </div>
       </div>
     {messageList.map((item) => {
       return(
-        <div class='message' key={item.key}>
-          <p class='textMessage'>{item.text}</p>
-          <p class='authorMessage'>{item.author}</p>
+        <div className='message' key={item.key}>
+          <p className='textMessage'>{item.text}</p>
+          <p className='authorMessage'>{item.author}</p>
         </div>
       )
     })}
