@@ -3,7 +3,7 @@
 
 function Message(props) {
   return (
-    <div class='hi'>
+    <div >
       Привет {props.text} !
     </div>
   );
