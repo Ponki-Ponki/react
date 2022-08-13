@@ -27,26 +27,32 @@ function App() {
     )
   };
   
-  
+  const b = ()=> {
+    console.log(typeof(messageList));
+    console.log(messageList)
+  };
+
+  const a = (author) => {
+    alert(author + ', сообщение отправлено!');
+  };
   
   const text = useRef();
   const author = useRef();
 
   const Send = () => {
     Update(text.current.value,author.current.value);  
+    a(author.current.value);
   };
 
 
   return (
     <div className='root'>
-      
-    
     <div className='listMessage'>
       <div>
         <input ref={text} type="text" className='text' />
         <div className='authorSend'>
           <input ref={author} type="text" className='author'/>
-          <button onClick={Send}>Send</button>
+          <button onClick={b}>Send</button>
         </div>
       </div>
     {messageList.map(item => {
