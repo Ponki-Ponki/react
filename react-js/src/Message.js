@@ -3,9 +3,10 @@
 
 function Message(props) {
   return (
-    <div >
-      Привет {props.text} !
-    </div>
+      <div className='message'>
+        <p className='textMessage'>{props.text}</p>
+        <p className='authorMessage'>{props.author}</p>
+      </div>
   );
 }
 

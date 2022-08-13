@@ -1,29 +1,41 @@
 import './App.css';
+import Message from './Message'
 import {useEffect, useRef, useState} from 'react';
 
 function App() {
-  const [messageList, setMessageList] = useState([{
-        key: 1,
-        text: 'sdgasdgasgasdafsdfasd',
-        author: 'a1',
-      },
-      {
-        key: 2,
-        text: 'asdglkasldafbskdnfkasbdjfbkjas',
-        author: 'a2',
-      }]);
-  
-    const Update = ({text,author}) => {
-      setMessageList(  
-        messageList.push({
-          key: messageList[messageList.length -1].key +1,
-          text: {text},
-          author: {author},
-        })
-      )
+  const [messageList, setMessageList] = useState([
+    {
+      id: 1,
+      text: 'sdgasdgasgasdafsdfasd',
+      author: 'a1',
+    },
+    {
+      id: 2,
+      text: 'asdglkasldafbskdnfkasbdjfbkjas',
+      author: 'a2',
     }
+  ])
+    
+    
+  const Update = ({text ,author}) => {
+    setMessageList(  
+      messageList.push({
+        id: messageList[messageList.length -1].id +1,
+        text: text,
+        author: author,
+      })
+    )
+  };
+  
+  
+  
   const text = useRef();
   const author = useRef();
+
+  const Send = () => {
+    Update(text.current.value,author.current.value);  
+  };
+
 
   return (
     <div className='root'>
@@ -34,15 +46,12 @@ function App() {
         <input ref={text} type="text" className='text' />
         <div className='authorSend'>
           <input ref={author} type="text" className='author'/>
-          <button onClick={Update({text: text.current, author: author.current})}>Send</button>
+          <button onClick={Send}>Send</button>
         </div>
       </div>
-    {messageList.map((item) => {
+    {messageList.map(item => {
       return(
-        <div className='message' key={item.key}>
-          <p className='textMessage'>{item.text}</p>
-          <p className='authorMessage'>{item.author}</p>
-        </div>
+        <Message item={item} key={item.id}/>
       )
     })}
     </div>
