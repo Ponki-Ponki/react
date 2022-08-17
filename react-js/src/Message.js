@@ -1,11 +1,11 @@
-
-
-
 function Message(props) {
   return (
       <div className='message'>
-        <p className='textMessage'>{props.text}</p>
-        <p className='authorMessage'>{props.author}</p>
+        <div className="textMessage">
+          <p>Сообщение:  </p>
+          <p> {props.item.text}</p>
+        </div>
+        <p className='authorMessage'>Автор: {props.item.author}</p>
       </div>
   );
 }
