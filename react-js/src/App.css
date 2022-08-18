@@ -7,23 +7,34 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: bisque;
-  width: 500px;
+  width: auto;
   height: auto;
+  padding-top: 20px;
 }
 .message{
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   border: 1px black;
   border-radius: 1px;
 
 }
-.textMessage{
-  
+.sendForm{
+  margin-top: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 20px;
 }
-.authorMessage{
-
+.MuiFormControl-root{
+  padding: 10px !important;
+}
+.textMessage{
+  display: flex;
+  flex-direction: row;
+}
+.messageList{
+  width: 420px;
+  margin-bottom: 5px;
 }
 .text{
   width: 250px;
@@ -32,6 +43,8 @@
 .authorSend{
   display: flex;
   justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .author{
   width: 70px;
