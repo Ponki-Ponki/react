@@ -7,8 +7,11 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { ThemeProvider} from '@mui/material/styles';
 
-function Chats(props) {
+function giveLastId(array) {
+    return array.length ? array[array.length - 1].id + 1 : 0;
+  };
 
+function Chats(props) {
 	const [messageList, setMessageList] = useState([])
   const ref = useRef(null);  
     
@@ -22,10 +25,7 @@ function Chats(props) {
     )
   };
 
-  function giveLastId(array) {
-    return array.length ? array[array.length - 1].id + 1 : 0;
-  };
-  
+    
   useEffect(()=> {
     setTimeout(()=>{
       bot(messageList)
@@ -58,7 +58,6 @@ function Chats(props) {
         alert('Вы не заполнили все поля!')
       };
   };
-
   return (   
 		
       <ThemeProvider theme={props.theme} >
@@ -105,7 +104,7 @@ function Chats(props) {
             <ListChats />
           </Box>
         </Box>
-      </ThemeProvider>
+       </ThemeProvider>
   );
 }
 

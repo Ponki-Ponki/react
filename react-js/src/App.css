@@ -3,6 +3,11 @@
   flex-direction: column;
   align-items: center;
 }
+.header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 .listMessage{
   display: flex;
   flex-direction: column;
@@ -49,4 +54,24 @@
 .author{
   width: 70px;
   height: 20px;
+}
+.links{
+  text-decoration: none;
+  margin-left: 20px;
+  color: black;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-right: 20px;
+  border: 1px solid black;
+  padding: 10px;
+}
+.noActiveLinks{
+  text-decoration: none;
+  margin-left: 20px;
+  color: red;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-right: 20px;
+  border: 1px solid black;
+  padding: 10px;
 }
