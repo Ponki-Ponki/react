@@ -45,14 +45,14 @@ function ListChats() {
 
 
   
-  // const addListChats = ()=> {
-  //   setListChats(
-  //     [...listChats,{
-  //       id: giveLastId(listChats),
-  //       name: prompt("Please enter chats name"),
-  //     }]
-  //   )
-  // };
+  const addListChats = ()=> {
+    setListChats(
+      [...listChats,{
+        id: giveLastId(listChats),
+        name: prompt("Please enter chats name"),
+      }]
+    )
+  };
   const delListChats = (id) =>{
     setListChats(
       [...listChats.filter(item => item.id !== id)]
@@ -80,7 +80,7 @@ function ListChats() {
           )})}
           <Button variant="contained" sx={{
             ml: 15}} 
-            onClick={''}>Add chats</Button>
+            onClick={addListChats()}>Add chats</Button>
       </List>
     </Box>
   );
