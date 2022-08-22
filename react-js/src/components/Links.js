@@ -13,5 +13,14 @@ function Links(props) {
   );
 }
 
+function LinksChats(props) {
+  return (
+    <  >
+      <NavLink className={ 
+      (({isActive})=> isActive ? '' : '')} 
+      to={props.to}>{props.name}</NavLink>
+    </>
+  );
+}
 
 export default Links;

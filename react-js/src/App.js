@@ -22,10 +22,10 @@ function App() {
   return (   
       <Routes>
         <Route path={'/'} element={<Layout />}>
-          <Route index element={<Home theme={theme}/>}/>
-          <Route path={'/Chats'} element={<Chats theme={theme}/>}/>
-          <Route path={'/Profile'} element={<Profile theme={theme}/>}/>
-          <Route path={'*'} element={<ErrorPage theme={theme}/>}/>
+          <Route exact index element={<Home theme={theme}/>}/>
+          <Route exact path={'/Chats'} element={<Chats theme={theme}/>}/>
+          <Route exact path={'/Profile'} element={<Profile theme={theme}/>}/>
+          <Route exact path={'*'} element={<ErrorPage theme={theme}/>}/>
         </Route>
       </Routes> 
   );

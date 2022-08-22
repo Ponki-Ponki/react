@@ -1,6 +1,5 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
 import Links from './Links';
 
 function Layout(props) {
