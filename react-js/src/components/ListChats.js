@@ -38,20 +38,20 @@ function ListChats() {
 
 
   
-  // const addListChats = ()=> {
-  //   setListChats(
-  //     [...listChats,{
-  //       id: giveLastId(listChats),
-  //       name: newChatsName(),
-  //     }]
-  //   )
-  // };
+  const addListChats = ()=> {
+    setListChats(
+      [...listChats,{
+        id: giveLastId(listChats),
+        name: newChatsName(),
+      }]
+    )
+  };
 
-  // const delListChats = (id) =>{
-  //   setListChats(
-  //     [...listChats.filter(item => item.id !== id)]
-  //   )
-  // };
+  const delListChats = (id) =>{
+    setListChats(
+      [...listChats.filter(item => item.id !== id)]
+    )
+  };
 
   return (
     <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
@@ -66,13 +66,13 @@ function ListChats() {
                 <EmailIcon/>
               </ListItemIcon>
               <LinksChats to={''} name={item.nameChats}/>
-              <Button variant="contained" onClick={/*delListChats(item.id)*/console.log(true)}>
+              <Button variant="contained" onClick={delListChats(item.id)}>
                 <DeleteForeverTwoToneIcon />
               </Button>
             </ListItemButton>
           )})}
           <Button variant="contained" sx={{ml: 15}} 
-            onClick={/*addListChats()*/console.log(true)}>Add chats</Button>
+            onClick={addListChats()}>Add chats</Button>
       </List>
     </Box>
   );
