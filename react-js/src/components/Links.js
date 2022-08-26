@@ -17,7 +17,7 @@ function LinksChats(props) {
   return (
     <  >
       <NavLink className={ 
-      (({isActive})=> isActive ? '' : '')} 
+      (({isActive})=> isActive ? 'linkChats' : 'none')} 
       to={props.to}>{props.name}</NavLink>
     </>
   );

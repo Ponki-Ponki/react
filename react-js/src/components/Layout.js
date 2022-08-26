@@ -7,14 +7,14 @@ function Layout(props) {
 		<div>
 			<header className='header'>
 				<Links to={'/'} name={'Home'} />
-				<Links to={'/Chats'} name={'Chats'} />
+				<Links to={'/ListChats'} name={'ListChats'} />
 				<Links to={'/Profile'} name={'Profile'} />
 			</header>
 			<main>
 				<Outlet/>
 			</main>
 			<footer>
-				a
+				footer
 			</footer>
 		</div>
 	);
