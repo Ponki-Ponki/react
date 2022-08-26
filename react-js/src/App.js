@@ -1,7 +1,7 @@
 import './App.css';
 import { red } from '@mui/material/colors';
 import { createTheme } from '@mui/material/styles';
-import Chats from './pages/Chats';
+import ListChats from './pages/ListChats';
 import {Routes, Route} from 'react-router-dom';
 import ErrorPage from './pages/ErrorPage';
 import Profile from './pages/Profile';
@@ -23,9 +23,10 @@ function App() {
       <Routes>
         <Route path={'/'} element={<Layout />}>
           <Route exact index element={<Home theme={theme}/>}/>
-          <Route exact path={'/Chats'} element={<Chats theme={theme}/>}/>
+          <Route exact path={'/ListChats/:id'} element={<ListChats theme={theme}/>}/>
+          <Route exact path={'/ListChats'} element={<ListChats theme={theme}/>}/>
           <Route exact path={'/Profile'} element={<Profile theme={theme}/>}/>
-          <Route exact path={'*'} element={<ErrorPage theme={theme}/>}/>
+          <Route path={'*'} element={<ErrorPage theme={theme}/>}/>
         </Route>
       </Routes> 
   );
