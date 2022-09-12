@@ -45,20 +45,20 @@ function ListChats(props) {
 
   const [listChats, setListChats] = useState(initialChats);
 
-  // const addListChats = ()=> {
-  //   setListChats(
-  //     [...listChats,{
-  //       id: giveLastId(listChats),
-  //       name: newChatsName(),
-  //     }]
-  //   )
-  // };
+  const addListChats = ()=> {
+    setListChats(
+      [...listChats,{
+        id: giveLastId(listChats),
+        name: newChatsName(),
+      }]
+    )
+  };
 
-  // const delListChats = (id) =>{
-  //   setListChats(
-  //     [...listChats.filter(item => item.id !== id)]
-  //   )
-  // };
+  const delListChats = (id) =>{
+    setListChats(
+      [...listChats.filter(item => item.id !== id)]
+    )
+  };
   console.log(id);
   if (!listChats[id]===undefined){
     if (!listChats[id]) {
@@ -93,13 +93,13 @@ function ListChats(props) {
                         <EmailIcon/>
                       </ListItemIcon>
                       <LinksChats to={'/ListChats/'+item.id} name={item.name}/>
-                      <Button variant="contained" onClick={console.log('delListChats')}>
+                      <Button variant="contained" onClick={() => delListChats(item.id)}>
                         <DeleteForeverTwoToneIcon />
                       </Button>
                     </ListItemButton>
                   )})}
                   <Button variant="contained" sx={{ml: 15}} 
-                    onClick={console.log('addListChats')}>Add chats</Button>
+                    onClick={()=> addListChats}>Add chats</Button>
               </List>
           </Box>
         </Box>
