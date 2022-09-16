@@ -15,8 +15,8 @@ export const usersReducer = (state = initialState, action) => {
 		case GET_USERS_ERROR:
 			return{
 				...state,
-				error: action.payload,
-				loading: false
+				loading: false,
+				error: action.payload
 			}
 		case GET_USERS: 
 			return{
