@@ -30,8 +30,10 @@ const Login = () => {
 		<div>
 			<h1>login</h1>
 			<form onSubmit={handleSubmit}>
+				Email:
 				<input value={email} onChange={e => setEmail(e.target.value)}/>
-				<input value={password} onChange={e => setPassword(e.target.value)}/>
+				Password:
+				<input value={password} type={password} onChange={e => setPassword(e.target.value)}/>
 				<button type="submit">SIGN IN</button>
 			</form>
 		</div>

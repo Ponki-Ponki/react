@@ -13,5 +13,5 @@ const firebaseConfig = {
 };
 
 const appFire = firebase.initializeApp(firebaseConfig);
-// export const db = appFire.database().ref();
+export const db = appFire.database().ref();
 export const auth = firebase.auth();
