@@ -25,7 +25,7 @@ function App() {
     return(
       <div>
         <h4>Error {error}</h4>
-        <button onClick={() =>dispacth(getUsers())}>Reload</button>
+        <button onClick={() => dispacth(getUsers())}>Reload</button>
       </div>
     )
   }
