@@ -1,7 +1,7 @@
-import { useState } from "react";
-import {useDispatch} from 'react-redux'
+import { useEffect, useState } from "react";
+import {useDispatch, useSelector} from 'react-redux'
 import { registerInitiate } from "../redux/actions";
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 const Register = () => {
 	const [email, setEmail] = useState('');
@@ -9,6 +9,14 @@ const Register = () => {
 	const [passwordRe, setPasswordRe] = useState('');
 	const [name, setName] = useState('');
 	const dispatch = useDispatch();
+	const user = useSelector(state => state.currentUser)
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		if(user) {
+				navigate('/')
+		}
+	}, [user, navigate])
 
 
 	const handleSubmit = (e) => {
@@ -27,10 +35,14 @@ const Register = () => {
 			</header>
 			<form onSubmit={handleSubmit}>
 				<h4>REGISTRATION</h4>
-				<input value={email} onChange={e => setEmail(e.target.value)}/>
-				<input value={password} onChange={e => setPassword(e.target.value)}/>
-				<input value={passwordRe} onChange={e => setPasswordRe(e.target.value)}/>
+				Name:
 				<input value={name} onChange={e => setName(e.target.value)}/>
+				Email:
+				<input value={email} type={email} onChange={e => setEmail(e.target.value)}/>
+				Password:
+				<input value={password} type={password} onChange={e => setPassword(e.target.value)}/>
+				Password confirm:
+				<input value={passwordRe} type={password} onChange={e => setPasswordRe(e.target.value)}/>
 				<button type="submit">Registration</button>
 			</form>
 		</div>
